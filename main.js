@@ -1,3 +1,6 @@
+//# IMPORT ARRAY POSTS
+const posts = require("./array-blog");
+
 // # IMPORT EXPRESS
 
 const express = require("express");
@@ -11,3 +14,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Lettura della porta: ${port}`);
 });
+
+console.log(posts);
