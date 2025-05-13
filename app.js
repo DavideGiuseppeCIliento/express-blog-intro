@@ -1,16 +1,24 @@
-//# IMPORT ARRAY POSTS
-const posts = require("./array-blog");
+//# IMPORT
 
-// # IMPORT EXPRESS
-
+//IMPORT EXPRESS
 const express = require("express");
 const app = express();
+//PORTA
 const port = 3000;
 
-// SET PUBLIC DIRECTORY
+//IMPORT DATA
+const posts = require("./data/array-blog");
+
+//IMPORT ROUTER POSTS
+const routerPosts = require("./routers/posts");
+
+//# SET PUBLIC DIRECTORY
 app.use(express.static(`public`));
 
-app.get("/", (req, res) => {
+//# SET RUTER POSTS
+app.use("/", routerPosts);
+
+app.get("/bacheca", (req, res) => {
   res.send("Server del mio blog");
 });
 
