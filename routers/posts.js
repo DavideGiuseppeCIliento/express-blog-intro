@@ -72,4 +72,5 @@ router.delete("/:id", (req, res) => {
   }
 });
 
+//EXPORT ROUTER
 module.exports = router;
