@@ -16,16 +16,9 @@ const routerPosts = require("./routers/posts");
 app.use(express.static(`public`));
 
 //# SET RUTER POSTS
-app.use("/", routerPosts);
+app.use("/bacheca", routerPosts);
 
-app.get("/bacheca", (req, res) => {
-  res.send("Server del mio blog");
-});
-
-app.get("/bacheca", (req, res) => {
-  res.json({ posts });
-});
-
+//# LISTEN PORT
 app.listen(port, () => {
   console.log(`Lettura della porta: ${port}`);
 });
