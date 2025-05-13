@@ -18,7 +18,7 @@ app.use(express.static(`public`));
 //# SET RUTER POSTS --------------------------------
 app.use("/posts", routerPosts);
 
-//# LISTEN PORT --------------------------------
+//# LISTEN PORT ---------------------------------
 app.listen(port, (error) => {
   if (error) {
     console.log(error);
