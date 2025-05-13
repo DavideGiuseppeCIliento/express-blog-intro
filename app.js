@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 
 //IMPORT DATA
-const posts = require("./data/array-blog");
+// const posts = require("./data/array-blog");
 
 //IMPORT ROUTER POSTS
 const routerPosts = require("./routers/posts");
@@ -16,9 +16,13 @@ const routerPosts = require("./routers/posts");
 app.use(express.static(`public`));
 
 //# SET RUTER POSTS --------------------------------
-app.use("/bacheca", routerPosts);
+app.use("/posts", routerPosts);
 
 //# LISTEN PORT --------------------------------
-app.listen(port, () => {
-  console.log(`Lettura della porta: ${port}`);
+app.listen(port, (error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(`Lettura della porta: ${port}`);
+  }
 });
