@@ -1,4 +1,4 @@
-// # ARRAY BLOG
+// # ARRAY BLOG --------------------------------
 
 const posts = [
   {

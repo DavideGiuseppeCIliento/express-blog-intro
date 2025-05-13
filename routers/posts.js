@@ -7,7 +7,7 @@ const posts = require("../data/array-blog");
 //SET ROUTER
 const router = express.Router();
 
-//# INDEX
+//# INDEX --------------------------------
 router.get("/", (req, res) => {
   res.json({
     message: "Visualizzo tutti i post",
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
   });
 });
 
-//# SHOW
+//# SHOW --------------------------------
 router.get("/:id", (req, res) => {
   const post = posts.find((post) => post.id === id);
 
