@@ -54,14 +54,17 @@ router.delete("/:id", (req, res) => {
 
   const error = posts.find((post) => post.id === id);
 
-  !error
-    ? res.send("Elemento non trovato")
-    : (posts = posts.filter((post) => post.id !== id));
-
-  res.json({
-    message: `Ho rimosso il post ${id}`,
-    posts,
-  });
+  if (!error) {
+    res.status(404).json({
+      message: `Il post ${id} non è stato trovato`,
+    });
+  } else {
+    posts = posts.filter((post) => post.id !== id);
+    res.json({
+      message: `Ho rimosso il post ${id}`,
+      posts,
+    });
+  }
 });
 
 module.exports = router;
