@@ -18,7 +18,9 @@ router.get("/", (req, res) => {
 
 //# SHOW --------------------------------
 router.get("/:id", (req, res) => {
+  // Trasformo in INT la stringa ID
   const id = parseInt(req.params.id);
+  // Trova il post con ID corrispondente
   const post = posts.find((post) => post.id === id);
 
   res.json({
@@ -50,15 +52,18 @@ router.patch("/:id", (req, res) => {
 
 //# DESTROY --------------------------------
 router.delete("/:id", (req, res) => {
+  // Trasformo in INT la stringa ID
   const id = parseInt(req.params.id);
-
+  // Trova il post con ID corrispondente se non c'è error è FALSE
   const error = posts.find((post) => post.id === id);
 
   if (!error) {
+    // ERROR FALSE error 404
     res.status(404).json({
       message: `Il post ${id} non è stato trovato`,
     });
   } else {
+    //Stampa posts rimuovendo il prescelto
     posts = posts.filter((post) => post.id !== id);
     res.json({
       message: `Ho rimosso il post ${id}`,
